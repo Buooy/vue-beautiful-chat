@@ -4,7 +4,7 @@
       <tbody>
         <tr v-for="user in participants" :key="user.id">
             <td style="text-align: center;"><img :src="user.imageUrl" class="img-msg"/></td>
-            <td class="user-element">{{user.name}}</td>
+            <td>{{user.name}}</td>
         </tr>
       </tbody>
   </table>
@@ -31,9 +31,5 @@ export default {
     border-radius: 50%;
     width: 50px;
     margin-right: 5px;
-  }
-  .user-element {
-    font-size: 20px;
-    vertical-align: middle;
   }
 </style>
