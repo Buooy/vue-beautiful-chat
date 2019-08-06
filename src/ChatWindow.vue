@@ -1,5 +1,5 @@
 <template>
-  <div class="sc-chat-window" :class="{opened: isOpen, closed: !isOpen}">
+  <div class="sc-chat-window" :class="[{opened: isOpen, closed: !isOpen}, {'embedded': isEmbedded, 'not-embedded': !isEmbedded}]">
     <Header
       :title="title"
       :imageUrl="titleImageUrl"
@@ -107,6 +107,10 @@ export default {
       type: Boolean,
       default: () => false
     },
+    isEmbedded: {
+      type: Boolean,
+      default: () => false
+    },
     placeholder: {
       type: String,
       default: 'Write a reply'
@@ -155,23 +159,37 @@ export default {
 }
 </script>
 <style scoped>
-.sc-chat-window {
+.sc-chat-window{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  background: white;
+}
+.sc-chat-window.not-embedded {
   width: 370px;
   height: calc(100% - 120px);
   max-height: 590px;
   position: fixed;
   right: 25px;
   bottom: 100px;
-  box-sizing: border-box;
   box-shadow: 0px 7px 40px 2px rgba(148, 149, 150, 0.1);
-  background: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: 0.3s ease-in-out;
   border-radius: 10px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+.sc-chat-window.embedded {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  height: calc(100% - 120px);
+  position: relative;
+}
+
+.sc-chat-window.embedded .sc-header{
+    border-top-left-radius : 0;
+    border-top-right-radius : 0;
+  }
 
 .sc-chat-window.closed {
   opacity: 0;

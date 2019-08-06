@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="sc-user-input-container">
     <Suggestions :suggestions="suggestions" v-on:sendSuggestion="_submitSuggestion" :colors="colors"/>
     <div v-if="file" class='file-container' :style="{backgroundColor: colors.userInput.text, color: colors.userInput.bg}">
       <span class='icon-file-message'><img :src="icons.file.img"  :alt="icons.file.name" height="15" /></span>
       {{file.name}}
       <span class='delete-file-message' @click="cancelFile()"><img :src="icons.closeSvg.img" :alt="icons.closeSvg.name" height="10" title='Remove the file' /></span>
     </div>
-    <form class="sc-user-input" :class="{active: inputActive}" :style="{background: colors.userInput.bg}">
+    <form class="sc-user-input" :class="{active: inputActive}">
       <div
         role="button"
         tabIndex="0"
@@ -228,16 +228,37 @@ export default {
 </script>
 
 <style>
+.sc-chat-window.embedded .sc-user-input-container{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  padding-top: 5px;
+  background-color: white;
+}
 .sc-user-input {
   min-height: 55px;
   margin: 0px;
+  margin-top: 5px;
   position: relative;
   bottom: 0;
   display: flex;
-  background-color: #f4f7f9;
+  background-color: rgba(51, 51, 51, 0.05);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+}
+.sc-chat-window.embedded .sc-user-input {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+@media (max-width: 450px){
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .sc-user-input--text {

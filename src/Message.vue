@@ -104,9 +104,9 @@ export default {
 </script>
 <style lang="scss">
 .sc-message {
-  width: 300px;
+  width: 90%;
   margin: auto;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   display: flex;
   .sc-message--edited{
     opacity: 0.7;
@@ -149,12 +149,6 @@ export default {
   margin-bottom: 0px;
   color: white;
   text-align: center;
-}
-
-@media (max-width: 450px) {
-  .sc-message {
-    width: 80%;
-  }
 }
 
 .sc-message--text {
@@ -202,6 +196,7 @@ export default {
   background-color: #4e8cff;
   max-width: calc(100% - 120px);
   word-wrap: break-word;
+  text-align: right;
 }
 
 .sc-message--text code {
@@ -212,6 +207,7 @@ export default {
   color: #263238;
   background-color: #f4f7f9;
   margin-right: 40px;
+  text-align: left;
 }
 
 .tooltip {
