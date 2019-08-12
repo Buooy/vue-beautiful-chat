@@ -180,13 +180,13 @@ export default {
 }
 .sc-chat-window.embedded {
   width: 100%;
-  max-width: 480px;
   margin: 0 auto;
   height: calc(100% - 120px);
   position: relative;
 }
 
 .sc-chat-window.embedded .sc-header{
+    display: none;
     border-top-left-radius : 0;
     border-top-right-radius : 0;
   }

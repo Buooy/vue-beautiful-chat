@@ -106,7 +106,7 @@ export default {
 .sc-message {
   width: 90%;
   margin: auto;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   display: flex;
   .sc-message--edited{
     opacity: 0.7;
@@ -137,8 +137,8 @@ export default {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
-  min-width: 30px;
-  min-height: 30px;
+  min-width: 40px;
+  min-height: 40px;
   border-radius: 50%;
   align-self: center;
   margin-right: 15px;
@@ -152,13 +152,17 @@ export default {
 }
 
 .sc-message--text {
-  padding: 5px 20px;
+  padding: 8px 10px;
   border-radius: 6px;
   font-weight: 300;
   font-size: 14px;
   line-height: 1.4;
   position: relative;
   -webkit-font-smoothing: subpixel-antialiased;
+
+  p{
+    margin-bottom: 0;
+  }
   .sc-message--text-body{
     .sc-message--text-content{
       white-space: pre-wrap;

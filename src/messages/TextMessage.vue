@@ -53,12 +53,16 @@ export default {
   },
   computed: {
     messageText() {
+
+      return this.message.data.text;
+      /*
       const escaped = escapeGoat.escape(this.message.data.text)
 
       return Autolinker.link(this.messageStyling ? fmt(escaped) : escaped, {
         className: 'chatLink',
         truncate: { length: 50, location: 'smart' }
       })
+      */
     },
     me(){
       return this.message.author === 'me';
