@@ -233,7 +233,7 @@ export default {
   bottom: 0;
   width: 100%;
   border-top: 1px solid #ccc;
-  padding-top: 5px;
+  padding: 5px 10px;
   background-color: white;
 }
 .sc-user-input {

@@ -87,11 +87,11 @@ export default {
 
 <style scoped>
 .sc-chat-window.embedded .sc-message-list {
-  max-height: 350px;
-  margin-bottom: 150px;
+  max-height: 100%;
+  padding-bottom: 100px;
 }
 .sc-message-list {
-  height: 80%;
+  height: 100%;
   overflow-y: auto;
   background-size: 100%;
   -webkit-overflow-scrolling: touch;

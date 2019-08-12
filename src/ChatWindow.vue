@@ -181,8 +181,8 @@ export default {
 .sc-chat-window.embedded {
   width: 100%;
   margin: 0 auto;
-  height: calc(100% - 120px);
-  position: relative;
+  height: 100%;
+  position: absolute;
 }
 
 .sc-chat-window.embedded .sc-header{
